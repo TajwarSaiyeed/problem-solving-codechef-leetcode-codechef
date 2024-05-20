@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <math.h>
 
+int memo[100] = {0};
+
 int fact(int n)
 {
-    int memo[100] = {0};
 
     if (memo[n] != 0)
         return memo[n];
