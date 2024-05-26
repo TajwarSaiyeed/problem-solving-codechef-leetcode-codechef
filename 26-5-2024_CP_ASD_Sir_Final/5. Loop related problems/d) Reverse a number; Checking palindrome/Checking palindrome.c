@@ -1,7 +1,7 @@
 /*
     Author: Tajwar Saiyeed
     Date: 2024-05-26 13:03:22
-    File: d) Reverse a number; Checking palindrome.c
+    File: Checking palindrome.c
 */
 #include <stdio.h>
 int main()
