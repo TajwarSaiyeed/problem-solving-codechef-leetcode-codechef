@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h> // Include the <stdlib.h> header for the abs() function
+#include <stdlib.h>
 
 /**
  * This program calculates the quotient of two numbers using bitwise operations.
