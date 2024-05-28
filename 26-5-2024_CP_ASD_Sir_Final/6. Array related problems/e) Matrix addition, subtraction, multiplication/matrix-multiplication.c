@@ -84,6 +84,8 @@ int main()
          1 2   5 6   1*5+2*7 1*6+2*8 = 19 22
          3 4   7 8   3*5+4*7 3*6+4*8 = 43 50
 
+        @ref : https://www.youtube.com/watch?v=2spTnAiQg4M
+
 
     */
     return 0;
