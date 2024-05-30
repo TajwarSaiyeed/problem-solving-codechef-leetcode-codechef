@@ -9,34 +9,53 @@ int main()
     int num;
     scanf("%d", &num);
 
-    /*
-        Explanation of Sieve of Eratosthenes: To check whether a number is prime or not.
+    int prime[num + 1];
 
-        It first checks if the number is less than 2, then it is not a prime number.
-        If the number is greater than or equal to 2, it will check if the number is divisible by any number from 2 to the square root of the number.
-        If the number is divisible by any number from 2 to the square root of the number, then it is not a prime number.
-        If the number is not divisible by any number from 2 to the square root of the number, then it is a prime number.
-
-        Example:
-        - If the number is 5, it will print "5 is a prime number."
-        - If the number is 4, it will print "4 is not a prime number."
-    */
-
-    if (num < 2)
+    for (int i = 2; i <= num; i++)
     {
-        printf("%d is not a prime number.", num);
+        prime[i] = 1;
     }
-    else
+
+    for (int i = 2; i <= num; i++)
     {
-        for (int i = 2; i * i <= num; i++)
+        if (prime[i])
         {
-            if (num % i == 0)
+            for (int j = i + i; j <= num; j += i)
             {
-                printf("%d is not a prime number.", num);
-                return 0;
+                prime[j] = 0;
             }
         }
-        printf("%d is a prime number.", num);
     }
+
+    for (int i = 2; i <= num; i++)
+    {
+        if (prime[i])
+        {
+            printf("%d ", i);
+        }
+    }
+
+    /*
+        Explanation:
+
+        Let's say the number is 30
+
+        1. We will create an array of size 31 (30 + 1) and initialize all the elements of the array to 1.
+
+        2. We will start from 2 and mark all the multiples of 2 as 0. So, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30 will be marked as 0.
+
+        3. We will start from 3 and mark all the multiples of 3 as 0. So, 6, 9, 12, 15, 18, 21, 24, 27, 30 will be marked as 0.
+
+        4. We will start from 5 and mark all the multiples of 5 as 0. So, 10, 15, 20, 25, 30 will be marked as 0.
+
+        5. We will start from 7 and mark all the multiples of 7 as 0. So, 14, 21, 28 will be marked as 0.
+
+        6. We will print all the numbers which are marked as 1. So, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29 will be printed.
+
+        7. So, the prime numbers from 1 to 30 are 2, 3, 5, 7, 11, 13, 17, 19, 23, 29.
+
+        8. So, the output will be 2 3 5 7 11 13 17 19 23 29
+    */
+
     return 0;
 }
