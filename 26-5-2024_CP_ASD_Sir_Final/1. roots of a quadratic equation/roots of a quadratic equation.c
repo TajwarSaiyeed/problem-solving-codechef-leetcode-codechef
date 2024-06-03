@@ -17,7 +17,6 @@ int main()
 {
     double a, b, c, discriminant, root1, root2;
 
-    printf("Enter coefficients a, b, and c: ");
     scanf("%lf %lf %lf", &a, &b, &c);
 
     // Calculate the discriminant: b^2 - 4ac

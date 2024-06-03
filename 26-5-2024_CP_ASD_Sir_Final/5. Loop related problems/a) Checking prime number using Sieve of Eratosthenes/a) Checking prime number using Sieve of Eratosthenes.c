@@ -29,7 +29,7 @@ int main()
 
     for (int i = 2; i <= num; i++)
     {
-        if (prime[i])
+        if (prime[i] && i >= 50)
         {
             printf("%d ", i);
         }
