@@ -1,8 +1,9 @@
 /*
     Author: Tajwar Saiyeed
-    Date: 2024-06-28 17:45:05
-    File: b) Checking prime number (Especially using Sieve).c
+    Date: 2024-06-28 18:42:29
+    File: b_Checking_prime_number_Especially_using_Sieve.c
 */
+
 #include <stdio.h>
 int main()
 {
