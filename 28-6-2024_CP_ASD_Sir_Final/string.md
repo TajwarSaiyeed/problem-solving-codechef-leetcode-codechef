@@ -56,6 +56,8 @@ String manipulation functions in C are used to perform operations on strings, su
 - `strcat()`: Concatenates two strings.
 - `strcpy()`: Copies one string to another.
 - `strrev()`: Reverses a string.
+- `strupr()`: Converts a string to uppercase.
+- `strlwr()`: Converts a string to lowercase.
 
 These functions are commonly used for string manipulation and processing in C programs.
 

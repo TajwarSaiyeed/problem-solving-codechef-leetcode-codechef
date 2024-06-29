@@ -44,9 +44,10 @@ int main()
         printf("Strcmp : Not Equal\n");
 
     // strchr
-    char str7[10] = "Hello";
-    char *ptr = strchr(str7, 'l');
-    printf("Strchr : %s\n", ptr);
+    char str7[20] = "Hello world";
+
+    // char *ptr = strchr(str7, 'l');
+    printf("Strchr : %s\n", strchr(str7, 'l'));
 
     // // strupr
     // char str8[10] = "hello";
@@ -58,7 +59,7 @@ int main()
 
     // strrev
     char str10[10] = "Hello";
-    printf("Strrev : %s\n", strrev(str10));
+    // printf("Strrev : %s\n", strrev(str10));
 
     return 0;
 }
