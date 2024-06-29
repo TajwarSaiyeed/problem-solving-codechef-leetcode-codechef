@@ -1,0 +1,4 @@
+This is a text file created using C programming.
+Author: Tajwar Saiyeed
+Date: 2024-06-30 05:12:38
+File: Creating a new file.c
