@@ -1,23 +1,26 @@
 /*
     Author: Tajwar Saiyeed
-    Date: 2024-06-28 19:31:20
+    Date: 2024-07-09 07:20:21
     File: Perfect_number.c
 */
-#include<stdio.h>
+
+// C program to check whether a number is a perfect number or not
+
+#include <stdio.h>
 int main()
 {
-    int n, i, sum=0;
+    int n, i, sum = 0;
     scanf("%d", &n);
 
-    for(i=1; i<n; i++)
+    for (i = 1; i < n; i++)
     {
-        if(n%i==0)
+        if (n % i == 0)
         {
-            sum+=i;
+            sum += i;
         }
     }
 
-    if(sum==n)
+    if (sum == n)
     {
         printf("%d is a perfect number\n", n);
     }

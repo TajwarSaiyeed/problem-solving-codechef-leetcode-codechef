@@ -1,9 +1,12 @@
 /*
     Author: Tajwar Saiyeed
-    Date: 2024-06-28 19:51:10
+    Date: 2024-07-09 07:31:38
     File: Checking palindrome.c
 */
-#include<stdio.h>
+
+// C program to check whether a number is a palindrome or not
+
+#include <stdio.h>
 int main()
 {
     int n, rev = 0, temp;
@@ -12,8 +15,8 @@ int main()
     temp = n;
     while (n != 0)
     {
-        rev = rev*10 + n%10;
-        n = n/10;
+        rev = rev * 10 + n % 10;
+        n = n / 10;
     }
 
     if (temp == rev)

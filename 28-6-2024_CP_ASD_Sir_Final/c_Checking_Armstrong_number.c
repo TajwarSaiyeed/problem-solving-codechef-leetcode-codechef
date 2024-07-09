@@ -1,10 +1,13 @@
 /*
     Author: Tajwar Saiyeed
-    Date: 2024-06-28 17:49:36
-    File: c) Checking Armstrong number.c
+    Date: 2024-07-09 07:18:44
+    File: c_Checking_Armstrong_number.c
 */
-#include<stdio.h>
-#include<math.h>
+
+// C program to check whether a number is Armstrong number or not
+
+#include <stdio.h>
+#include <math.h>
 int main()
 {
     int n;
@@ -29,7 +32,7 @@ int main()
     else
     {
         printf("%d is not an Armstrong number.\n", n);
-    }   
+    }
 
     return 0;
 }
