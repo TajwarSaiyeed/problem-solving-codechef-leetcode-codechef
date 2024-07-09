@@ -1,8 +1,9 @@
 /*
     Author: Tajwar Saiyeed
-    Date: 2024-06-03 06:46:03
+    Date: 2024-07-09 09:14:45
     File: pattern2.c
 */
+
 #include <stdio.h>
 int main()
 {

@@ -1,6 +1,6 @@
 /*
     Author: Tajwar Saiyeed
-    Date: 2024-06-03 07:04:56
+    Date: 2024-07-09 09:04:08
     File: number-pattern-4.c
 */
 #include <stdio.h>
