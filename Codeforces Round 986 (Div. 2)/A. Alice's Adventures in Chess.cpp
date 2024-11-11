@@ -11,49 +11,28 @@ void solve()
     cin >> s;
 
     int x = 0, y = 0;
-    set<pair<int, int>> visited;
-    visited.insert({x, y});
 
-    for (char move : s)
+    for (int i = 0; i < 10000; i++)
     {
-        if (move == 'N')
+        char ch = s[i % n];
+        if (ch == 'N')
+        {
             y++;
-        else if (move == 'S')
+        }
+        else if (ch == 'S')
+        {
             y--;
-        else if (move == 'E')
+        }
+        else if (ch == 'E')
+        {
             x++;
-        else if (move == 'W')
+        }
+        else
+        {
             x--;
+        }
 
-        visited.insert({x, y});
-    }
-    if (visited.count({a, b}))
-    {
-        yes;
-        return;
-    }
-
-    int dx = x, dy = y;
-
-    if (dx == 0 && dy == 0)
-    {
-        no;
-        return;
-    }
-
-    for (auto [cx, cy] : visited)
-    {
-        int tx = a - cx, ty = b - cy;
-
-        bool can_reach = false;
-        if (dx == 0 && tx == 0)
-            can_reach = (dy != 0 && ty % dy == 0 && ty / dy >= 0);
-        else if (dy == 0 && ty == 0)
-            can_reach = (dx != 0 && tx % dx == 0 && tx / dx >= 0);
-        else if (dx != 0 && dy != 0)
-            can_reach = (tx % dx == 0 && ty % dy == 0 && tx / dx == ty / dy && tx / dx >= 0);
-
-        if (can_reach)
+        if (x == a && y == b)
         {
             yes;
             return;
