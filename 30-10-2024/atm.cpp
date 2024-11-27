@@ -1,5 +1,4 @@
-#include<bits/stdc++.h>
-
+#include <bits/stdc++.h>
 using namespace std;
 
 class User
@@ -11,6 +10,7 @@ private:
     string motherName;
     int age;
     double balance;
+    string accountNumber;
 
 public:
     User() : balance(0.0) {}
@@ -24,12 +24,15 @@ public:
     void setFatherName(const string &fname) { fatherName = fname; }
     void setMotherName(const string &mname) { motherName = mname; }
     void setAge(int a) { age = a; }
+
     void setBalance(double b) { balance = b; }
-    double getBalance() const { 
-        stringstream ss;
-        ss << fixed << setprecision(2) << balance;
-        return stod(ss.str());
+    double getBalance() const { return balance; }
+
+    void setAccountNumber()
+    {
+        accountNumber = username + to_string(age);
     }
+    string getAccountNumber() const { return accountNumber; }
 
     void deposit(double amount)
     {
@@ -56,7 +59,8 @@ public:
     {
         ofstream file("users.txt", ios::app);
         file << username << " " << password << " " << fatherName << " "
-             << motherName << " " << age << " " << balance << endl;
+             << motherName << " " << age << " " << balance << " "
+             << accountNumber << endl;
         file.close();
     }
 
@@ -64,7 +68,8 @@ public:
     {
         ifstream file("users.txt");
         User temp;
-        while (file >> temp.username >> temp.password >> temp.fatherName >> temp.motherName >> temp.age >> temp.balance)
+        while (file >> temp.username >> temp.password >> temp.fatherName >>
+               temp.motherName >> temp.age >> temp.balance >> temp.accountNumber)
         {
             if (temp.username == uname)
             {
@@ -83,18 +88,22 @@ public:
         ofstream temp("temp.txt");
         User tempUser;
 
-        while (file >> tempUser.username >> tempUser.password >> tempUser.fatherName >> tempUser.motherName >> tempUser.age >> tempUser.balance)
+        while (file >> tempUser.username >> tempUser.password >> tempUser.fatherName >>
+               tempUser.motherName >> tempUser.age >> tempUser.balance >>
+               tempUser.accountNumber)
         {
             if (tempUser.username == username)
             {
                 temp << username << " " << password << " " << fatherName << " "
-                     << motherName << " " << age << " " << balance << endl;
+                     << motherName << " " << age << " " << balance << " "
+                     << accountNumber << endl;
             }
             else
             {
                 temp << tempUser.username << " " << tempUser.password << " "
                      << tempUser.fatherName << " " << tempUser.motherName << " "
-                     << tempUser.age << " " << tempUser.balance << endl;
+                     << tempUser.age << " " << tempUser.balance << " "
+                     << tempUser.accountNumber << endl;
             }
         }
 
@@ -131,10 +140,12 @@ void registerUser()
     cin >> age;
     newUser.setAge(age);
 
-    newUser.setBalance(0.0); 
-    newUser.saveToFile(); 
+    newUser.setAccountNumber();
+    newUser.setBalance(0.0);
+    newUser.saveToFile();
 
     cout << "User registered successfully!" << endl;
+    cout << "Your account number: " << newUser.getAccountNumber() << endl;
 }
 
 bool loginUser(User &user)
@@ -149,6 +160,7 @@ bool loginUser(User &user)
     if (user.loadFromFile(username) && user.checkPassword(password))
     {
         cout << "Login successful!" << endl;
+        cout << "Your account number: " << user.getAccountNumber() << endl;
         return true;
     }
     else
