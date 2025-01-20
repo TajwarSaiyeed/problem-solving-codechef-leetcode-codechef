@@ -1,35 +1,31 @@
-#include <iostream>
-#include <algorithm>
-
+#include <bits/stdc++.h>
 using namespace std;
-
-int calculate_fibonacciness(int a1, int a2, int a3, int a4, int a5)
-{
-    return (a3 == a1 + a2) + (a4 == a2 + a3) + (a5 == a3 + a4);
-
-}
 
 int main()
 {
     int t;
     cin >> t;
-
     while (t--)
     {
         int a1, a2, a4, a5;
         cin >> a1 >> a2 >> a4 >> a5;
 
-        int max_fibonacciness = 0;
+        int cmp1 = a1 + a2;
+        int cmp2 = a4 - a2;
+        int cmp3 = a5 - a4;
 
-        int candidates[] = {a1 + a2, a4 - a2, a5 - a4};
-        
-
-        for (int a3 : candidates)
+        if (cmp1 == cmp2 and cmp2 == cmp3)
         {
-            max_fibonacciness = max(max_fibonacciness, calculate_fibonacciness(a1, a2, a3, a4, a5));
+            cout << 3 << endl;
         }
-
-        cout << max_fibonacciness << endl;
+        else if (a1 + a2 == cmp2 or a1 + a2 == cmp3 or cmp2 == cmp3)
+        {
+            cout << 2 << endl;
+        }
+        else
+        {
+            cout << 1 << endl;
+        }
     }
 
     return 0;
