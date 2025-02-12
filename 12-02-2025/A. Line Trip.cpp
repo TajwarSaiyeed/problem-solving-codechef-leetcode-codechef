@@ -19,7 +19,7 @@ void solve()
         cin >> i;
     int mx = INT_MIN;
     int last = 2 * (x - a[n - 1]);
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n - 1; i++)
         mx = max(mx, a[i + 1] - a[i]);
     cout << max(max(mx, a[0] - 0), last) << nl;
 }
