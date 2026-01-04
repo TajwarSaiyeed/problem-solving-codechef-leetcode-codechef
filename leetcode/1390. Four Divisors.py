@@ -10,13 +10,7 @@ class Solution:
                 ans.add(i)
                 ans.add(x // i)
 
-        if len(ans) == 4:
-            return sum(ans)
-        return 0
+        return sum(ans) if len(ans) == 4 else 0
 
     def sumFourDivisors(self, nums: List[int]) -> int:
-        ans = 0
-        for i in nums:
-            ans += self.div(i)
-
-        return ans
+        return sum(self.div(i) for i in nums)
