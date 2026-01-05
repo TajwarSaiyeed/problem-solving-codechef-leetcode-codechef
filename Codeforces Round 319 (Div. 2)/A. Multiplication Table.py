@@ -14,3 +14,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# https://codeforces.com/problemset/problem/577/A
