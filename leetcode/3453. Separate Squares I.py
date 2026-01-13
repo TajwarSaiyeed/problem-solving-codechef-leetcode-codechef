@@ -27,3 +27,6 @@ class Solution:
                 hi = mid
 
         return res
+
+
+# https://leetcode.com/problems/separate-squares-i
